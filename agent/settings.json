@@ -1,0 +1,37 @@
+{
+  "lastChangelogVersion": "0.84.0",
+  "defaultProvider": "modal-kimi",
+  "defaultModel": "moonshotai/Kimi-K3",
+  "defaultThinkingLevel": "medium",
+  "packages": [
+    "npm:context-mode",
+    "npm:pi-rewind",
+    "npm:pi-observability",
+    "git:github.com/DietrichGebert/ponytail",
+    "npm:@observal/pi-insights",
+    "npm:@bytetrue/pi-web-search",
+    "npm:pi-tui-commands",
+    "https://github.com/zeflq/pi-reviewer",
+    "npm:@dreki-gg/pi-code-reviewer"
+  ],
+  "theme": "github-dark-default",
+  "collapseChangelog": false,
+  "showHardwareCursor": true,
+  "terminal": {
+    "showTerminalProgress": true
+  },
+  "quietStartup": true,
+  "followUpMode": "one-at-a-time",
+  "steeringMode": "one-at-a-time",
+  "treeFilterMode": "all",
+  "enabledModels": [
+    "opencode/deepseek-v4-flash-free",
+    "openai-codex/gpt-5.6-sol",
+    "openai-codex/gpt-5.6-luna",
+    "openai-codex/gpt-5.6-terra",
+    "modal-kimi/moonshotai/Kimi-K3"
+  ],
+  "compaction": {
+    "enabled": true
+  }
+}

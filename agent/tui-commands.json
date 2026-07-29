@@ -1,0 +1,16 @@
+{
+  "enabled": [
+    "lazygit",
+    "nvim",
+    "vim",
+    "opencode",
+    "git",
+    "hunk",
+    "zsh"
+  ],
+  "customs": {
+    "opencode": "opencode",
+    "git": "git",
+    "zsh": "zsh"
+  }
+}

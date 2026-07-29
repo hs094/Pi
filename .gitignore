@@ -1,0 +1,16 @@
+node_modules
+dist
+/agent/ayu/checkpoints/sessions
+/agent/extensions/pi-permission-system/logs/pi-permission-system-permission-review.jsonl
+/agent/models.json
+/agent/models-store.json
+/agent/pi-crash.log
+/agent/run-history.jsonl
+/agent/sessions
+/agent/usage-data
+/context-mode
+/agent/observability/history.jsonl
+#/agent/auth.json
+/agent/observability/history.jsonl.71940.b27d56ae-7b6a-42e5-81a1-2c473e70ecb9.tmp
+/agent/auth.json
+/agent/models-store.json
