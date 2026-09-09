@@ -9,5 +9,8 @@
 ## Priority
 If any rule above conflicts with another rule, earlier rules win (1 over 2, 2 over 3, etc.).
 
+## Search tools
+For `fd` and `rg` usage, see [`search-tools.md`](search-tools.md).
+
 ## Python code
 For Python work, also apply rules from `PYTHON.md` in this directory. Read it at session start or when the first Python file is touched.

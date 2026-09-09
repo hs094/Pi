@@ -12,5 +12,9 @@ dist
 /agent/observability/history.jsonl
 #/agent/auth.json
 /agent/observability/history.jsonl.71940.b27d56ae-7b6a-42e5-81a1-2c473e70ecb9.tmp
-/agent/auth.json
+#/agent/auth.json
 /agent/models-store.json
+/agent/mcp-cache.json
+/agent/mcp-onboarding.json
+/agent/observability
+/agent/usage-cache.json
