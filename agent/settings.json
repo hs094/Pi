@@ -4,28 +4,27 @@
     "enabled": true
   },
   "defaultModel": "gpt-5.6-luna",
+  "defaultTools": [
+    "+tool_search"
+  ],
   "defaultProvider": "openai-codex",
   "defaultThinkingLevel": "high",
   "enabledModels": [
-    "openai-codex/gpt-5.6-sol",
-    "openai-codex/gpt-5.6-luna",
-    "openai-codex/gpt-5.6-terra",
-    "modal-kimi/moonshotai/Kimi-K3"
+    "openai/gpt-6-luna",
+    "openai/gpt-6.1-sol"
   ],
   "followUpMode": "one-at-a-time",
-  "lastChangelogVersion": "0.85.1",
+  "lastChangelogVersion": "1.4.0",
   "packages": [
-    "npm:context-mode",
-    "npm:pi-rewind",
     "git:github.com/DietrichGebert/ponytail",
     "npm:@observal/pi-insights",
-    "npm:@bytetrue/pi-web-search",
     "npm:pi-tui-commands",
     "npm:pi-agent-browser-native",
     "npm:@superwhisper/pi",
-    "npm:pi-mcp-adapter",
-    "npm:@narumitw/pi-goal",
-    "npm:pi-observability"
+    "npm:pi-observability",
+    "npm:pi-context-view",
+    "npm:@pi-plugins/usage",
+    "npm:@davideasden/pi-undo"
   ],
   "quietStartup": true,
   "showHardwareCursor": true,
@@ -37,5 +36,6 @@
   "treeFilterMode": "all",
   "showCacheMissNotices": true,
   "defaultProjectTrust": "always",
-  "tuiMode": "fullscreen"
+  "tuiMode": "fullscreen",
+  "deviceId": "8954863c-30e9-4e2c-aaa0-b9f1c79b84f9"
 }

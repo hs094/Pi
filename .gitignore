@@ -18,3 +18,9 @@ dist
 /agent/mcp-onboarding.json
 /agent/observability
 /agent/usage-cache.json
+/agent/auth.json
+/agent/bin/pi
+/agent/install/
+/agent/mcp-auth.json
+/agent/mcp.json
+/agent/trust.json

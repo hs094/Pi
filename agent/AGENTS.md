@@ -14,3 +14,6 @@ For `fd` and `rg` usage, see [`search-tools.md`](search-tools.md).
 
 ## Python code
 For Python work, also apply rules from `PYTHON.md` in this directory. Read it at session start or when the first Python file is touched.
+
+## Jira ticket creation
+When asked to create a Jira ticket, always create it in the **AI SOC Agent** Jira project and set the **Integration** component. Use a single `codemode` invocation for the entire workflow. Inside that script, resolve the Atlassian site and required issue type/fields using Jira tools, then create the issue and return its key and URL. If the project or component cannot be resolved, or a required choice is ambiguous, ask before creating. Do not make separate codemode calls for lookup and creation. See [the verified example and one-call template](jira-ticket-creation-example.md).
