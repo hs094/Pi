@@ -25,3 +25,4 @@ dist
 /agent/mcp.json
 /agent/trust.json
 /agent/extensions/pi-harness/look-visits.json
+/agent/web-search-cache

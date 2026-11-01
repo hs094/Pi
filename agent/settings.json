@@ -8,11 +8,14 @@
     "+bash",
     "+edit",
     "+write",
+    "+grep",
+    "+find",
+    "+ls",
     "+codemode"
   ],
   "codemode": {
     "mode": "only",
-    "inlineBudget": 0
+    "inlineBudget": 1000
   },
   "packages": [
     "npm:pi-rewind",
@@ -22,7 +25,9 @@
     "npm:pi-web-access",
     "npm:pi-markdown-preview",
     "npm:pi-context-view",
-    "npm:@adeildo/pi-look"
+    "npm:@adeildo/pi-look",
+    "npm:pi-permissions",
+    "npm:pi-output-limits"
   ],
   "quietStartup": true,
   "theme": "github-dark-default",
@@ -49,5 +54,13 @@
   "markdown": {
     "mermaid": "streaming"
   },
-  "doubleEscapeAction": "tree"
+  "doubleEscapeAction": "tree",
+  "outputLimits": {
+    "maxLines": 500,
+    "maxBytes": 16384,
+    "tools": {
+      "bash": { "maxLines": 300, "maxBytes": 8192 }
+    },
+    "tailTools": ["bash"]
+  }
 }

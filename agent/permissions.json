@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(*)"
+    ],
+    "deny": [
+      "Bash(bat *)",
+      "Bash(cat *)",
+
+      "Bash(git push*)",
+      "Bash(git reset --hard*)",
+      "Bash(git clean -fd*)",
+      "Bash(rm -rf*)",
+      "Bash(sudo *)",
+
+      "Bash(* .env)",
+      "Bash(* .env.*)",
+      "Bash(* /.env)",
+      "Bash(* /.env.*)",
+      "Bash(* .env/*)",
+
+      "Bash(rg *--no-ignore*)",
+      "Bash(rg *--hidden*)",
+      "Bash(rg *--no-ignore-vcs*)",
+      "Bash(rg *--unrestricted*)",
+      "Bash(rg -u *)",
+      "Bash(rg -uu*)",
+      "Bash(rg -uuu*)",
+
+      "Bash(fd *--no-ignore*)",
+      "Bash(fd *--hidden*)",
+      "Bash(fd *--unrestricted*)",
+      "Bash(fd -u *)",
+      "Bash(fd -uu*)",
+
+      "Bash(grep *)",
+      "Bash(git grep *--no-exclude-standard*)"
+    ]
+  }
+}
+
