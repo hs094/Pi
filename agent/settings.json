@@ -4,6 +4,10 @@
   "defaultModel": "gpt-6-luna",
   "defaultThinkingLevel": "high",
   "defaultTools": [
+    "+read",
+    "+bash",
+    "+edit",
+    "+write",
     "+codemode"
   ],
   "codemode": {
