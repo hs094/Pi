@@ -1,41 +1,49 @@
 {
-  "collapseChangelog": false,
-  "compaction": {
-    "enabled": true
-  },
-  "defaultModel": "gpt-5.6-luna",
-  "defaultTools": [
-    "+tool_search"
-  ],
-  "defaultProvider": "openai-codex",
-  "defaultThinkingLevel": "high",
-  "enabledModels": [
-    "openai/gpt-6-luna",
-    "openai/gpt-6.1-sol"
-  ],
-  "followUpMode": "one-at-a-time",
   "lastChangelogVersion": "1.4.0",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-6-luna",
+  "defaultThinkingLevel": "high",
+  "defaultTools": [
+    "+codemode"
+  ],
+  "codemode": {
+    "mode": "only",
+    "inlineBudget": 0
+  },
   "packages": [
+    "npm:pi-rewind",
     "git:github.com/DietrichGebert/ponytail",
-    "npm:@observal/pi-insights",
     "npm:pi-tui-commands",
-    "npm:pi-agent-browser-native",
     "npm:@superwhisper/pi",
-    "npm:pi-observability",
+    "npm:pi-web-access",
+    "npm:pi-markdown-preview",
     "npm:pi-context-view",
-    "npm:@pi-plugins/usage",
-    "npm:@davideasden/pi-undo"
+    "npm:@adeildo/pi-look"
   ],
   "quietStartup": true,
+  "theme": "github-dark-default",
+  "collapseChangelog": true,
   "showHardwareCursor": true,
   "steeringMode": "one-at-a-time",
   "terminal": {
     "showTerminalProgress": true
   },
-  "theme": "github-dark-default",
   "treeFilterMode": "all",
   "showCacheMissNotices": true,
   "defaultProjectTrust": "always",
   "tuiMode": "fullscreen",
-  "deviceId": "8954863c-30e9-4e2c-aaa0-b9f1c79b84f9"
+  "enabledModels": [
+    "openai/gpt-6-luna",
+    "openai/gpt-6.1-sol"
+  ],
+  "compaction": {
+    "enabled": true
+  },
+  "extensions": [
+    "-builtin:mcp"
+  ],
+  "markdown": {
+    "mermaid": "streaming"
+  },
+  "doubleEscapeAction": "tree"
 }

@@ -24,3 +24,4 @@ dist
 /agent/mcp-auth.json
 /agent/mcp.json
 /agent/trust.json
+/agent/extensions/pi-harness/look-visits.json
