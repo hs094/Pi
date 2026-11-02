@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "1.4.0",
+  "lastChangelogVersion": "1.5.0",
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-6-luna",
   "defaultThinkingLevel": "high",
@@ -27,7 +27,8 @@
     "npm:pi-context-view",
     "npm:@adeildo/pi-look",
     "npm:pi-permissions",
-    "npm:pi-output-limits"
+    "npm:pi-output-limits",
+    "npm:pi-md-preview@0.5.0"
   ],
   "quietStartup": true,
   "theme": "github-dark-default",
@@ -48,19 +49,18 @@
   "compaction": {
     "enabled": true
   },
-  "extensions": [
-    "-builtin:mcp"
-  ],
   "markdown": {
     "mermaid": "streaming"
   },
   "doubleEscapeAction": "tree",
   "outputLimits": {
-    "maxLines": 500,
-    "maxBytes": 16384,
-    "tools": {
-      "bash": { "maxLines": 300, "maxBytes": 8192 }
-    },
-    "tailTools": ["bash"]
+    "maxLines": 300,
+    "maxBytes": 8192,
+    "tailTools": [
+      "bash"
+    ]
+  },
+  "extensionChangelogVersions": {
+    "{\"source\":\"npm:pi-web-access\",\"scope\":\"user\"}": "0.46.0"
   }
 }
