@@ -1,0 +1,30 @@
+{
+  "mcpServers": {
+    "jira": {
+      "url": "https://mcp.atlassian.com/v1/mcp/authv2",
+      "exposure": "codemode-deferred",
+      "toolExposure": {
+        "*Confluence*": "hidden",
+        "*Compass*": "hidden"
+      }
+    },
+    "yaak": {
+      "url": "http://127.0.0.1:64343/mcp",
+      "exposure": "direct"
+    },
+    "dbx": {
+      "command": "~/.dbx/bin/dbx-mcp"
+    },
+    "opensearch": {
+      "command": "uvx",
+      "args": [
+        "opensearch-mcp-server-py"
+      ],
+      "env": {
+        "OPENSEARCH_URL": "https://opensearch.simbian.net",
+        "OPENSEARCH_USERNAME": "${OPENSEARCH_USERNAME}",
+        "OPENSEARCH_PASSWORD": "${OPENSEARCH_PASSWORD}"
+      }
+    }
+  }
+}
