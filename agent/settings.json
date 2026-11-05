@@ -23,7 +23,6 @@
     "npm:pi-tui-commands",
     "npm:@superwhisper/pi",
     "npm:pi-web-access",
-    "npm:pi-markdown-preview",
     "npm:pi-context-view",
     "npm:@adeildo/pi-look",
     "npm:pi-permissions",
@@ -61,6 +60,7 @@
     ]
   },
   "extensionChangelogVersions": {
-    "{\"source\":\"npm:pi-web-access\",\"scope\":\"user\"}": "0.46.0"
+    "{\"source\":\"npm:pi-web-access\",\"scope\":\"user\"}": "0.47.0",
+    "{\"source\":\"npm:pi-context-view\",\"scope\":\"user\"}": "0.8.3"
   }
 }
