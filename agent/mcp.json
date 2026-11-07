@@ -9,22 +9,14 @@
       }
     },
     "yaak": {
-      "url": "http://127.0.0.1:64343/mcp",
-      "exposure": "direct"
+      "url": "http://127.0.0.1:64343/mcp"
     },
     "dbx": {
       "command": "~/.dbx/bin/dbx-mcp"
     },
     "opensearch": {
-      "command": "uvx",
-      "args": [
-        "opensearch-mcp-server-py"
-      ],
-      "env": {
-        "OPENSEARCH_URL": "https://opensearch.simbian.net",
-        "OPENSEARCH_USERNAME": "${OPENSEARCH_USERNAME}",
-        "OPENSEARCH_PASSWORD": "${OPENSEARCH_PASSWORD}"
-      }
+      "command": "~/.local/bin/opensearch-mcp-server-py",
+      "timeout": 30
     }
   }
 }

@@ -21,7 +21,6 @@
     "npm:pi-rewind",
     "git:github.com/DietrichGebert/ponytail",
     "npm:pi-tui-commands",
-    "npm:@superwhisper/pi",
     "npm:pi-web-access",
     "npm:pi-context-view",
     "npm:@adeildo/pi-look",
