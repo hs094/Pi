@@ -8,7 +8,6 @@ dist
 /agent/run-history.jsonl
 /agent/sessions
 /agent/usage-data
-/context-mode
 /agent/observability/history.jsonl
 #/agent/auth.json
 /agent/observability/history.jsonl.71940.b27d56ae-7b6a-42e5-81a1-2c473e70ecb9.tmp

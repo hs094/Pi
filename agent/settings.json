@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "1.5.0",
+  "lastChangelogVersion": "1.5.2",
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-6-luna",
   "defaultThinkingLevel": "medium",
@@ -15,7 +15,7 @@
   ],
   "codemode": {
     "mode": "only",
-    "inlineBudget": 1000
+    "inlineBudget": 2000
   },
   "packages": [
     "npm:pi-rewind",
