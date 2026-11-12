@@ -1,22 +1,10 @@
 {
   "mcpServers": {
-    "jira": {
-      "url": "https://mcp.atlassian.com/v1/mcp/authv2",
-      "exposure": "codemode-deferred",
-      "toolExposure": {
-        "*Confluence*": "hidden",
-        "*Compass*": "hidden"
-      }
-    },
     "yaak": {
       "url": "http://127.0.0.1:64343/mcp"
     },
     "dbx": {
       "command": "~/.dbx/bin/dbx-mcp"
-    },
-    "opensearch": {
-      "command": "~/.local/bin/opensearch-mcp-server-py",
-      "timeout": 30
     }
   }
 }
