@@ -1,5 +1,8 @@
 {
 	"look": {
-		"icons": "auto"
+		"icons": "nerd",
+		"frame": {
+			"style": "heavy"
+		}
 	}
 }

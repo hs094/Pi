@@ -2,8 +2,6 @@
   "enabled": [
     "lazygit",
     "nvim",
-    "vim",
-    "opencode",
     "git",
     "hunk",
     "zsh"

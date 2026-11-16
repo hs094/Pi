@@ -20,12 +20,13 @@
   "packages": [
     "npm:pi-rewind",
     "git:github.com/DietrichGebert/ponytail",
-    "npm:pi-tui-commands",
     "npm:pi-web-access",
     "npm:pi-context-view",
-    "npm:@adeildo/pi-look",
     "npm:pi-output-limits",
-    "npm:pi-md-preview@0.5.0"
+    "npm:pi-md-preview@0.5.0",
+    "git:github.com/earendil-works/pi-review",
+    "npm:@adeildo/pi-look",
+    "npm:pi-undo-redo"
   ],
   "quietStartup": true,
   "theme": "github-dark-default",
@@ -41,7 +42,7 @@
   "tuiMode": "fullscreen",
   "enabledModels": [
     "openai/gpt-6-luna",
-    "openai/gpt-6.1-sol"
+    "openai/gpt-6.1-terra"
   ],
   "compaction": {
     "enabled": true
@@ -58,7 +59,10 @@
     ]
   },
   "extensionChangelogVersions": {
-    "{\"source\":\"npm:pi-web-access\",\"scope\":\"user\"}": "0.47.0",
-    "{\"source\":\"npm:pi-context-view\",\"scope\":\"user\"}": "0.8.3"
-  }
+    "{\"source\":\"npm:pi-web-access\",\"scope\":\"user\"}": "0.48.0",
+    "{\"source\":\"npm:pi-context-view\",\"scope\":\"user\"}": "0.8.4"
+  },
+  "followUpMode": "one-at-a-time",
+  "transport": "auto",
+  "fullscreenScrollbar": "auto"
 }

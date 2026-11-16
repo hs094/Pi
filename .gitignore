@@ -24,3 +24,5 @@ dist
 /agent/trust.json
 /agent/extensions/pi-harness/look-visits.json
 /agent/web-search-cache
+/agent/crashes.json
+/agent/state/pi-undo-redo

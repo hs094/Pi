@@ -5,6 +5,11 @@
 2. **Scope discipline.** Modify only files directly mentioned by the user or directly necessary for the requested change. You may inspect directly related callers, tests, fixtures, configuration, and documentation when needed to understand behavior or impact; do not modify unrelated files unless explicitly asked.
 3. **No auto-formatting.** Never run formatters, linters, or auto-formatting tools unless the user explicitly requests them. Avoid adding imports, restructuring code, or refactoring that isn't asked for.
 4. **Ask when ambiguous.** If instructions are unclear, ambiguous, or missing details needed to proceed — ask. Don't guess and ship something off-target.
+5. **Batch codemode work.** Prefer to group independent tool or command calls into one codemode invocation (for example with `Promise.allSettled`); chain dependent calls in order within the same invocation when practical.
+
+## File reading
+- For every `read` tool call, provide an explicit `offset` and set `limit` to no more than 100 lines. Continue in subsequent calls with the next offset when more content is needed.
+- Before reading a path that is not absolute, use `ls` to verify the path or its containing directory exists. Absolute paths may be read directly.
 
 ## Priority
 If any rule above conflicts with another rule, earlier rules win (1 over 2, 2 over 3, etc.).
