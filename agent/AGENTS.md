@@ -7,6 +7,9 @@
 4. **Ask when ambiguous.** If instructions are unclear, ambiguous, or missing details needed to proceed — ask. Don't guess and ship something off-target.
 5. **Batch codemode work.** Prefer to group independent tool or command calls into one codemode invocation (for example with `Promise.allSettled`); chain dependent calls in order within the same invocation when practical.
 
+## Codemode scripts
+- Start each codemode script with an options line setting `max_output_tokens` to a suitable limit (for example, `// @options: {"max_output_tokens": 2000}`). Set `timeout_ms` when the work needs a deadline, choosing a value appropriate to the expected runtime; omit it otherwise.
+
 ## File reading
 - For every `read` tool call, provide an explicit `offset` and set `limit` to no more than 100 lines. Continue in subsequent calls with the next offset when more content is needed.
 - Before reading a path that is not absolute, use `ls` to verify the path or its containing directory exists. Absolute paths may be read directly.
@@ -18,4 +21,4 @@ If any rule above conflicts with another rule, earlier rules win (1 over 2, 2 ov
 For Python work, also apply rules from `PYTHON.md` in this directory. Read it at session start or when the first Python file is touched. In shell commands and scripts, invoke Python 3 as `python3`, not `python`.
 
 ## Jira ticket creation
-Create tickets in the **AI SOC Agent** Jira project with the **Integration** component. Follow the [verified example and one-call template](jira-ticket-creation-example.md); if the project or component cannot be resolved, or a required choice is ambiguous, ask before creating.
+Create tickets in the **AI SOC Agent** Jira project with the **Platform** or **Integration** component, as requested. Follow the [verified example and one-call template](jira-ticket-creation-example.md); resolve the component from Jira metadata instead of assuming its ID. If the requested component is unavailable or the requested component is ambiguous, ask before creating.

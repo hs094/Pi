@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "1.5.2",
+  "lastChangelogVersion": "1.6.0",
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-6-luna",
   "defaultThinkingLevel": "high",
@@ -27,8 +27,9 @@
     "npm:pi-md-preview@0.5.0",
     "git:github.com/earendil-works/pi-review",
     "npm:@adeildo/pi-look",
-    "npm:pi-undo-redo",
-    "npm:pi-better"
+    "npm:pi-better",
+    "npm:pi-goal",
+    "https://github.com/hs094/bg-terminals"
   ],
   "quietStartup": true,
   "theme": "github-dark-default",
@@ -67,8 +68,5 @@
   },
   "followUpMode": "one-at-a-time",
   "transport": "auto",
-  "fullscreenScrollbar": "auto",
-  "extensions": [
-    "/Users/hs094/.local/share/opencode-console/cli/pi-extension.js"
-  ]
+  "fullscreenScrollbar": "auto"
 }

@@ -1,8 +1,5 @@
 {
   "mcpServers": {
-    "yaak": {
-      "url": "http://127.0.0.1:64343/mcp"
-    },
     "dbx": {
       "command": "~/.dbx/bin/dbx-mcp"
     }
