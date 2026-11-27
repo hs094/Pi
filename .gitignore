@@ -26,3 +26,4 @@ dist
 /agent/web-search-cache
 /agent/crashes.json
 /agent/state/pi-undo-redo
+/agent/install/managed-install.json

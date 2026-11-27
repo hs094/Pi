@@ -1,9 +1,16 @@
 /**
- * Runner — register /<name> commands and execute them with TUI suspend/resume
+ * Runner — register /<name> commands and execute them in a Pi terminal overlay.
  */
 
-import { spawnSync } from 'node:child_process';
-import type { ExtensionAPI } from '@earendil-works/pi-coding-agent';
+import { createRequire } from "node:module";
+import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
+import type { IPty, spawn as SpawnPty } from "node-pty";
+import type { Terminal as HeadlessTerminal } from "@xterm/headless";
+import { TerminalOverlay } from "./terminal-view.js";
+
+const require = createRequire(import.meta.url);
+const { spawn } = require("node-pty") as { spawn: typeof SpawnPty };
+const { Terminal } = require("@xterm/headless") as typeof import("@xterm/headless");
 
 const registeredNames = new Set<string>();
 
@@ -14,39 +21,76 @@ export function registerTuiCommand(pi: ExtensionAPI, name: string, command: stri
   pi.registerCommand(name, {
     description: `Run: ${command}`,
     handler: async (args, ctx) => {
-      if (ctx.mode !== 'tui') {
-        ctx.ui.notify('Interactive commands require TUI mode', 'error');
+      if (ctx.mode !== "tui") {
+        ctx.ui.notify("Interactive commands require TUI mode", "error");
         return;
       }
 
       const fullCmd = args ? `${command} ${args}` : command;
+      let pty: IPty | undefined;
+      let terminal: HeadlessTerminal | undefined;
+      let exitCode: number | undefined;
+      let spawnError: unknown;
+      let exited = false;
 
-      await ctx.ui.custom((tui, _theme, _kb, done) => {
-        tui.stop();
-        process.stdout.write('\x1b[2J\x1b[H');
-        process.stdout.write(
-          `\x1b[1;36mPi · /${name}\x1b[0m\n` +
-            '\x1b[2mRunning inside Pi · exit the command to return\x1b[0m\n\n',
+      try {
+        await ctx.ui.custom<void>(
+          (tui, theme, _keybindings, done) => {
+            const columns = Math.max(1, tui.terminal.columns - 2);
+            const rows = Math.max(1, tui.terminal.rows - 2);
+            terminal = new Terminal({ cols: columns, rows, scrollback: 0, allowProposedApi: true });
+
+            try {
+              pty = spawn(process.env.SHELL || "/bin/sh", ["-c", fullCmd], {
+                cols: columns,
+                rows,
+                cwd: process.cwd(),
+                env: { ...process.env, TERM: "xterm-256color", COLORTERM: "truecolor" },
+                name: "xterm-256color",
+              });
+            } catch (error) {
+              spawnError = error;
+              terminal.dispose();
+              terminal = undefined;
+              queueMicrotask(() => done());
+              return { render: () => [], invalidate: () => {} };
+            }
+
+            pty.onData((data) => {
+              terminal?.write(data, () => tui.requestRender());
+            });
+            pty.onExit(({ exitCode: code }) => {
+              exitCode = code;
+              exited = true;
+              terminal?.dispose();
+              terminal = undefined;
+              done();
+            });
+
+            return new TerminalOverlay(tui, theme, name, terminal, pty);
+          },
+          {
+            overlay: true,
+            overlayOptions: { anchor: "center", width: "100%", maxHeight: "100%" },
+          },
         );
+      } catch (error) {
+        spawnError ??= error;
+      } finally {
+        if (!exited) pty?.kill();
+        terminal?.dispose();
+      }
 
-        const shell = process.env.SHELL || '/bin/sh';
-        const result = spawnSync(shell, ['-c', fullCmd], {
-          stdio: 'inherit',
-          env: process.env,
-        });
+      if (spawnError) {
+        ctx.ui.notify(`Could not start ${name}: ${String(spawnError)}`, "error");
+        return;
+      }
 
-        tui.start();
-        tui.requestRender(true);
-
-        const msg =
-          result.status === 0
-            ? `"${fullCmd}" done`
-            : `"${fullCmd}" exited with code ${result.status}`;
-        ctx.ui.notify(msg, result.status === 0 ? 'info' : 'error');
-
-        done(undefined);
-        return { render: () => [], invalidate: () => {} };
-      });
+      const msg =
+        exitCode === 0
+          ? `"${fullCmd}" done`
+          : `"${fullCmd}" exited with code ${exitCode}`;
+      ctx.ui.notify(msg, exitCode === 0 ? "info" : "error");
     },
   });
 }

@@ -28,16 +28,26 @@
   },
   "scripts": {
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "test": "node --test --experimental-strip-types terminal-view.test.ts",
+    "postinstall": "node scripts/fix-pty-helper.cjs"
   },
   "files": [
     "*.ts",
     "*.json",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "scripts/"
   ],
   "devDependencies": {
     "prettier": "^3.9.5"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@xterm/headless": "^6.0.0",
+    "node-pty": "^1.1.0"
+  },
+  "allowScripts": {
+    "node-pty@1.1.0": true
+  }
 }

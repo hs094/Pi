@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "1.6.0",
+  "lastChangelogVersion": "1.6.1",
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-6-luna",
   "defaultThinkingLevel": "high",
@@ -20,7 +20,6 @@
   "packages": [
     "npm:pi-rewind",
     "git:github.com/DietrichGebert/ponytail",
-    "npm:pi-tui-commands",
     "npm:pi-web-access",
     "npm:pi-context-view",
     "npm:pi-output-limits",
@@ -40,7 +39,6 @@
     "showTerminalProgress": true
   },
   "treeFilterMode": "all",
-  "showCacheMissNotices": true,
   "defaultProjectTrust": "always",
   "tuiMode": "fullscreen",
   "enabledModels": [
@@ -68,5 +66,11 @@
   },
   "followUpMode": "one-at-a-time",
   "transport": "auto",
-  "fullscreenScrollbar": "auto"
+  "fullscreenScrollbar": "auto",
+  "notices": {
+    "cacheMisses": true,
+    "cacheWarming": true,
+    "compactionCosts": true,
+    "reasoningDrops": true
+  }
 }

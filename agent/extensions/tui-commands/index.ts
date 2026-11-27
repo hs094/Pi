@@ -1,7 +1,7 @@
 /**
  * TUI Commands — interactive / command registry with binary checks
  *
- * Register any executable as a /command that suspends pi's TUI while it runs.
+ * Register any executable as a /command that runs inside a Pi terminal overlay.
  * Persists across sessions. Add commands from within pi itself.
  *
  * Usage:
@@ -10,8 +10,7 @@
  *   /tuicmd rm <n>          Remove a command
  *   /lazygit                (once enabled) runs lazygit
  *
- * Install:
- *   pi install git:github.com/<user>/pi-extensions
+ * Global extension folder: ~/.pi/agent/extensions/tui-commands/
  *
  * Config: ~/.pi/agent/extensions/tui-commands/tui-commands.json
  */
